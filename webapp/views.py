@@ -1,8 +1,6 @@
 from django.http import HttpResponseRedirect
-from django.shortcuts import render
-from django.utils.dateparse import parse_date
+from django.shortcuts import render, redirect
 
-from webapp.forms import TaskForm
 from webapp.models import TaskManage
 
 
@@ -15,12 +13,20 @@ def index(request):
 
 def create_task(request):
     if request.method == 'POST':
-        task = TaskForm(request.POST)
-        if task.is_valid():
-            task.save()
-            return HttpResponseRedirect("/")
+        description = request.POST.get('description')
+        detailed_description = request.POST.get('detailed_description')
+        status = request.POST.get('status')
+        deadline = request.POST.get('deadline')
+
+        task = TaskManage.objects.create(
+            description=description,
+            detailed_description=detailed_description,
+            status=status,
+            deadline=deadline
+        )
+        return redirect('index')
     else:
-        task = TaskForm()
+        task = TaskManage()
     return render(request, 'create_task.html', context={'task': task})
 
 
