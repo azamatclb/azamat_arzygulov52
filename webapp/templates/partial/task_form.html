@@ -1,0 +1,21 @@
+<div class="form-group mb-3">
+    <label for="description">Описание</label>
+    <input type="text" class="form-control" name="description" id="description"
+           value="{{ task.description|default_if_none:'' }}" placeholder="Описание" required>
+</div>
+<div class="form-group mb-3">
+    <label for="detailed_description">Подробное описание</label>
+    <input type="text" class="form-control" name="detailed_description" id="detailed_description"
+           value="{{ task.detailed_description|default_if_none:'' }}" placeholder="Подробное описание">
+</div>
+<div class="form-group mb-3">
+    <label for="status">Статус</label>
+    <input type="text" class="form-control" name="status" id="status"
+           value="{{ task.status|default_if_none:'' }}" placeholder="Статус" required>
+</div>
+<div class="form-group mb-3">
+    <label for="deadline">Срок</label>
+    <input type="date" class="form-control" name="deadline" id="deadline"
+           value="{{ task.deadline|date:'Y-m-d'|default_if_none:'' }}" required>
+</div>
+<button type="submit" class="btn btn-success">{{ button_text }}</button>

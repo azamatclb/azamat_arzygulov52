@@ -1,5 +1,5 @@
 from django.http import HttpResponseRedirect
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 
 from webapp.models import TaskManage
 
@@ -30,10 +30,20 @@ def create_task(request):
     return render(request, 'create_task.html', context={'task': task})
 
 
-def task_details(request, *args, pk, **kwargs):
-    try:
-        task = TaskManage.objects.get(id=pk)
-        pass
-    except TaskManage.DoesNotExist:
-        return HttpResponseRedirect('/')
-    return render(request, 'task_details.html', context={'task': task})
+def task_details(request, pk):
+    task = get_object_or_404(TaskManage, pk=pk)
+    return render(request, 'task_details.html', {'task': task})
+
+
+def task_update(request, pk):
+    task = get_object_or_404(TaskManage, pk=pk)
+
+    if request.method == "POST":
+        task.description = request.POST.get('description')
+        task.status = request.POST.get("status")
+        task.deadline = request.POST.get("deadline")
+        task.detailed_description = request.POST.get("detailed_description")
+        task.save()
+        return redirect('task_details', pk=task.pk)
+
+    return render(request, 'task_update.html', context={'task': task})

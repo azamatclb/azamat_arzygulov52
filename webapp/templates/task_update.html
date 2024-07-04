@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>Update task: {{ task.pk }} {{ task.description }}</title>
+{% endblock %}
+
+{% block content %}
+    <div class="container mt-4">
+        <h2>Update Task</h2>
+        <form action="{% url 'task_update' task.pk %}" method="post">
+            {% csrf_token %}
+            {% include 'partial/task_form.html' with button_text='Update'%}
+            <a href="{% url 'task_details' task.pk %}" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+{% endblock %}

@@ -13,8 +13,11 @@
                         <h5 class="card-title">{{ task.status }}</h5>
                         <h6 class="card-subtitle mb-2 text-body-secondary">{{ task.deadline|date:'Y-m-d' }}</h6>
                         <p class="card-text">{{ task.description }}</p>
-                        <a href="task/{{ task.id }}/" class="btn btn-success">Detail <i
+                        <a href="{% url 'task_details' task.pk %}" class="btn btn-success">Detail <i
                                 class="bi bi-arrow-right"></i></a>
+                        <a href="{% url 'task_update' task.pk %}" class="btn btn-success">Update <i
+                                class="bi bi-arrow-right"></i></a>
+
                     </div>
                 </div>
             {% endfor %}
