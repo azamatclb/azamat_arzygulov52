@@ -47,3 +47,12 @@ def task_update(request, pk):
         return redirect('task_details', pk=task.pk)
 
     return render(request, 'task_update.html', context={'task': task})
+
+
+def task_delete(request, pk):
+    task = get_object_or_404(TaskManage, pk=pk)
+    if request.method == "GET":
+        return render(request, "delete_task.html", context={'task': task})
+    else:
+        task.delete()
+        return redirect('index')
