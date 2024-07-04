@@ -1,37 +1,52 @@
-[{
-    "model": "webapp.taskmanage",
-    "pk": 1,
-    "fields": {
-      "description": "Homework123",
-      "status": "new",
-      "deadline": "2024-08-30"
-    }
-  },
-  {
-    "model": "webapp.taskmanage",
-    "pk": 2,
-    "fields": {
-      "description": "homework25469",
-      "status": "completed",
-      "deadline": "2001-09-11"
-    }
-  },
-  {
-    "model": "webapp.taskmanage",
-    "pk": 3,
-    "fields": {
-      "description": "homework1231421r2nemdoi2cn3rcuq3nbfub3qcf9u3ctqn3i",
-      "status": "new",
-      "deadline": "2032-01-25"
-    }
-  },
-  {
-    "model": "webapp.taskmanage",
-    "pk": 4,
-    "fields": {
-      "description": " custom initial appearance. Checks & radios Use our custom radio buttons",
-      "status": "in_progress",
-      "deadline": "2100-01-05"
-    }
+[
+{
+  "model": "webapp.taskmanage",
+  "pk": 26,
+  "fields": {
+    "description": "Homework 54",
+    "status": "new",
+    "deadline": "2024-01-05",
+    "detailed_description": ""
   }
+},
+{
+  "model": "webapp.taskmanage",
+  "pk": 27,
+  "fields": {
+    "description": "Homework 55",
+    "status": "new",
+    "deadline": "2024-07-07",
+    "detailed_description": "Добавьте в ваш проект TODO-лист страницы редактирования и удаления задачи.Создайте включаемый шаблон для формы задачи и используйте его на страницах создания и обновления задачи. Создайте форму задачи и используйте её на страницах создания и редактирования задачи.\r\nУдаление выполните с подтверждением."
+  }
+},
+{
+  "model": "webapp.taskmanage",
+  "pk": 28,
+  "fields": {
+    "description": "Homework 56",
+    "status": "new",
+    "deadline": "2024-07-08",
+    "detailed_description": ""
+  }
+},
+{
+  "model": "webapp.taskmanage",
+  "pk": 29,
+  "fields": {
+    "description": "Homework 57",
+    "status": "new",
+    "deadline": "2024-07-11",
+    "detailed_description": ""
+  }
+},
+{
+  "model": "webapp.taskmanage",
+  "pk": 30,
+  "fields": {
+    "description": "Homework 57",
+    "status": "new",
+    "deadline": "2024-07-15",
+    "detailed_description": ""
+  }
+}
 ]
